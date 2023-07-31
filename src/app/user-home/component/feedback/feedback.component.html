@@ -1,0 +1,71 @@
+<link rel="stylesheet"
+  href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+<div class="back">
+  <br><br>
+
+  <form class="container" [formGroup]="feedbackForm">
+    <h1 class="heading">Feedback</h1>
+    <div class="o" *ngIf="isformActive">
+      <p class="para">* How was the avatar response?</p>
+
+      <div class="feedback-level">
+
+        <div class="level" id="frown" (click)="sadFun('Unhappy')">
+          &nbsp;&nbsp; <i class="las la-frown"></i> <br>
+          Unhappy
+        </div>
+        <div class="level" id="meh" (click)="normalFun('Neutral')">
+          &nbsp; <i class="lar la-meh"></i><br>
+          Neutral
+        </div>
+     
+        <div class="level" id="grin" (click)="happyFun('Satisfied')">
+          &nbsp;&nbsp;<i class="lar la-grin"></i><br>
+          Satisfied
+        </div>
+      </div>
+      <div *ngIf="face.invalid && (face.dirty || face.touched)"
+      class="label__error border__error">
+      <div *ngIf="face.errors?.['required']">
+          This is required
+      </div>
+  </div>
+
+      <div class="feedback-msg">
+        <p class="para mt-2">
+          What are the main reasons for your rating?
+        </p>
+        <!-- <textarea class="vv "  type="text" name="formData" formControlName="formData"></textarea> -->
+        <input class="vv form-control" type="text" style="height: 50px;" name="formData" formControlName="formData">
+        <br>
+      </div>
+
+
+
+      <div class="buttons">
+
+        <a (click)="submitForm()">
+          <img class="mt-1" style="width : 24px; color:white; margin-left: 21px;" *ngIf="isLoading"
+            src="../../assets/images/Rolling-1s-200px (2).gif">
+          <p *ngIf="!isLoading">&nbsp; &nbsp; Submit</p>
+        </a>
+
+        <a (click)="cancelForm()">Cancel</a>
+      </div>
+
+    </div>
+
+    <div *ngIf="!isformActive">
+      <!-- <div  style="width: 100px; display: flex; justify-content: center;">
+    <img src="../../../../assets/images/sus.png"  >
+    </div> -->
+      <p class="para" style="display: flex; justify-content: center;">Thank you for your feedback</p>
+
+      <div class="buttons">
+        <button class="btn btn-danger" (click)="cancelForm()">Close</button>
+      </div>
+    </div>
+  </form>
+
+</div>

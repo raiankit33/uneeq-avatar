@@ -1,0 +1,333 @@
+<div class="fixed-mic" id="movableCard-main">
+  <div class="bottomright">
+    <div class="" id="audio" style="cursor: pointer; margin-top: -28px;">
+      <button class="btn" id="audioMicBut" onkeyup="event.preventDefault()" (click)="onclickMic()"
+        style="width: 48px;height: 48px; ; background-color: #aabcd3;border-radius: 13px;"
+        title="Click mic button or Hold spacebar to talk">
+        <i style="font-size: 19px;" *ngIf="isvoiceAnimationOn == false" class="fa-solid fa-microphone"></i>
+        <i  style="font-size: 19px;" *ngIf="isvoiceAnimationOn == true"  class="fa-solid fa-microphone fa-beat-fade"></i>
+      </button>
+    </div>
+  </div>
+
+
+  <div class="bottomChat-voice" *ngIf="isvoiceAnimationOn">
+    <div class="containerss">
+      <div class="voice-animation"></div>
+    </div>
+  </div>
+
+  <!-- // chatoption on/off -->
+  <div class="bottomChat  showI" id="chatbarOnly">
+    <div class="" id="chatbarImage" (click)="chatbar()" style="cursor: pointer;; margin-top: -28px;">
+      <span>
+        <img class="" id="chatID" src="../../assets/images/Group 15.png" class="cc_icon" title="Type your input"
+          *ngIf="!ischatBoxOpen" style="cursor:pointer;width: 50px; ">
+        <img class="" id="chatID" src="../../assets/images/Group 6.png" class="cc_icon" title="Type your input"
+          *ngIf="ischatBoxOpen" style="cursor:pointer; width: 50px;">
+      </span>
+    </div>
+  </div>
+
+  <div class="bottomChat "  id="mobileAvatarButton">
+    <div class="" style="cursor: pointer; margin-top: -28px;" onkeyup="event.preventDefault()" (click)="hideMethod()">
+      <div class="">
+        <span>
+          <img class="" *ngIf="!mobileAvatarOnOff" class="avatar_icon" title="Avatar hide"
+            src="../../assets/images/Group 19.png" style="width:50px ">
+          <img class="" *ngIf="mobileAvatarOnOff" class="avatar_icon" title="Avatar hide"
+            src="../../assets/images/Group 20.png" style="width:50px ;">
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- // chat input box  -->
+  <div class="centerDiv" id="centerDiv">
+    <div class="chat-bar mobile_chat" id="chat-bar" style="z-index: 1980000;"><input name="" type="text"
+        class="chat-textbox" onkeydown="if (event.keyCode == 13)
+        document.getElementById('btnSearch').click()" [(ngModel)]="userText" placeholder="Enter text here..."><a
+        (click)="sendTextFun()" id="btnSearch"><img src="../../assets/images/image 4.png" height="40px"
+          style="cursor: pointer;" class="chat-send"></a></div>
+  </div>
+
+  <div class="speaking-lady  imgTest" id="movableCard">
+    <!-- <ng-container *ngIf="!messageForQueueAvatar">
+ <div class="speakingsss" id="cross" (click)="onLoadCard('sm-video')"><i *ngIf="expandOn" class="fa fa-expand" title="Maximize"  style="color: wheat; font-size: 18px;"
+        aria-hidden="true"></i> <i *ngIf="!expandOn" class="fa fa-compress" title="Minimize" style="color: wheat; font-size: 18px;"></i></div>
+  </ng-container> -->
+   
+    <!-- // top left icon area -->
+    <div id="iconShow" class="zz showI"
+      style=" justify-content: left; margin-left: 18px; margin-top: 10px; cursor: pointer">
+    
+    </div>
+
+    <!-- // exit button -->
+    <div class="rightDiv zz">
+      <img id="exitExam" class="mr-2 mt-2  showI" (click)="exitTestSeries()" src="../../assets/button.png"
+        style="width: 40px; cursor: pointer;"> 
+         <!-- // learning module -->
+    </div>
+
+
+    <!-- // hand stop avatar voice  -->
+    <div class="bottomleft pausebtn" id="stopIcon" onkeyup="event.preventDefault()" (click)="stopSpeaking()">
+      <img src="../../assets/images/Group 8.png" *ngIf="!stopAvatarOnClick" class="cc_icon"
+        title="Stop the avatar while speaking" style="cursor:pointer;">
+      <img src="../../assets/images/Group 8.png" *ngIf="stopAvatarOnClick" class="cc_icon"
+        title="Stop the avatar while speaking" style="cursor:pointer;">
+    </div>
+    <!-- //end  hand stop avatar voice  -->
+
+    <!-- // CC on/off feature button  -->
+    <div class=" cc_subtitle  showI" id="ccSubtitle">
+      <div class="btn-group dropright">
+        <a class="btn" data-toggle="dropdown" id="ccbtnn" aria-haspopup="true" aria-expanded="false">
+          <img src="../../assets/images/Group 12.png" class="cc_icon" title="CC" style="width: 47px;">
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item bg-white showI" id="OnlyDisplayOnTest" (click)="QuestionCCOnOf()">
+            <button class="btn  border" *ngIf="!QuestionccOnOff">Question CC: <b class="text-danger">OFF</b></button>
+            <button *ngIf="QuestionccOnOff" class="btn border">Question CC:
+              <b class="text-success">ON</b></button>
+            <div class="dropdown-divider"></div>
+          </a>
+          <a class="dropdown-item bg-white" (click)="avatarCCOnOf()">
+            <button class="btn  border" *ngIf="!ccOnOff">Avatar CC: <b class="text-danger">OFF</b></button> <button
+              *ngIf="ccOnOff" class="btn border">Avatar CC: <b class="text-success">ON</b></button> </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item bg-white" (click)="userCCOnOf()">
+            <button class="btn  border" *ngIf="!UserccOnOff"> Subtitles CC: <b class="text-danger">OFF</b></button> <button
+              class="btn border" *ngIf="UserccOnOff"> Subtitles CC: <b class="text-success">ON</b></button> </a>
+              <div class="dropdown-divider"></div>
+
+            
+        </div>
+      </div>
+    </div>
+    <!-- //end  CC on/off feature button  -->
+    <div id="feedback" class=" feedbackrules ">
+      <button class="btn Mic" id="audioMicBut" onkeyup="event.preventDefault()" (click)="openFeedback()"
+        style="width: 45px;height: 45px; ; background-color: #7393c4;border-radius: 13px;"
+        title="Hold mic button or spacebar to talk">
+        <img src="../../../../assets/rate.png" class="" title="Feedback"
+          style="cursor:pointer; width: 32px;height: 35px; margin-top: -2px; margin-left: -5px;">
+      </button>
+
+      <!-- <img src="../../assets/images/satisfaction.png" (click)="openFeedback()" class="cc_icon" title="Feedback" style="width: 47px; cursor: pointer;"> -->
+    </div>
+    <!-- // Info button dropdown -->
+    <div class=" rules showI" id="ruleSeries">
+      <!-- Default dropright button -->
+      <div class="btn-group dropright " id="infobtnn">
+        <a class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img src="../../assets/images/Group 10.png" class="cc_icon" title="Info" style="width: 47px;">
+        </a>
+        <div id="INFOComm" class="dropdown-menu">
+
+          <a class="showI" id="openOnTestOnly">
+
+            <a class="dropdown-item" style="display: flex; justify-content: cenleftter;">
+              <button class="btn btn-outline-primary "
+                style="width: 250px; align-items: left; display: flex; justify-content: center; "
+                (click)="InstructionTestSeries()"><img src="../../../../assets/person.png"
+                  style="width: 26px; "></button></a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item">
+              To answer a question, you can say "Option A",<br> “Choice A,” or the text of the answer itself.</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item">
+              To move to next question, say or type - Yes</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item">
+              To repeat the question, say or type - Repeat</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item">
+              To stop the Quiz, say or type - Stop</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item">
+              To stop the avatar from talking, click on the <br> pause button. </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item">
+              To interrupt her, press down the keyboard <br> spacebar or click on the microphone button.</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item">
+              Warning ! - Refreshing the page will reset the Quiz</a>
+
+          </a>
+
+          <a class="showI" id="openOnLearningOnly">
+
+            <a class="dropdown-item" style="display: flex; justify-content: left;">
+              <button class="btn btn-outline-primary "
+                style="width: 250px; align-items: left; display: flex; justify-content: center; "
+                (click)="InstructionLearning()"><img src="../../../../assets/person.png"
+                  style="width: 26px; "></button></a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item">
+              To move to the next slide, please click<br> on the Next button or say/type - Next.</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item">
+              To move to the previous slide, please click<br> on the Previous button or say/type - Previous.</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item">
+              If you wish to repeat the current slide, please click <br> on the Repeat button or say/type - Repeat</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item">
+              To close the presentation, please click<br> on the Close button or say/type - Close.</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item">
+              To stop the avatar from talking, click on the <br> pause button. </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item">
+              To interrupt her, press down the keyboard <br> spacebar or click on the microphone button.</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item">
+              Warning!- Refreshing the page will reset the slides. </a>
+
+          </a>
+
+          <a class="" id="normalOpen">
+            <a class="dropdown-item" style="display: flex; justify-content: left; ">
+              <button class="btn btn-outline-primary"
+                style="width: 250px; align-items: left; display: flex; justify-content: center; "
+                (click)="InstructionNormal()"><img src="../../../../assets/person.png"
+                  style="width: 26px; "></button></a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item">
+              Click the microphone button or <br> press the spacebar once to speak.</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item">
+              To stop the avatar from talking, click on <br> the pause button. </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item">
+              To interrupt her, press down the keyboard<br> spacebar or click on the microphone button.</a>
+
+
+          </a>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+    <!-- // queue message for avatar  -->
+    <div *ngIf='messageForQueueAvatar' style="margin-top:60px">
+      <div id="loader" style="display: flex;justify-content: center; font-size: 18px;">
+        <img src="../../assets/images/Rolling.gif" style="width: 50px; height:50px ">
+      </div>
+      <p style="display: flex;justify-content: center; font-size: 16px; color: white;">
+        Sorry, I am busy in serving others.<br> Give me a moment I will be right back.
+      </p>
+    </div>
+
+
+
+    <!-- // avatar video card -->
+    <div class="userVideo">
+      <div class="g" style="display: flex; justify-content: center;">
+        <div class="uneeqAvatar" id="sm-video">
+        </div>
+          <!-- <video src="../../assets/images/mov_bbb.mp4" preload="auto" autoplay muted style=" width: 100%; height: 100%;"></video> -->
+     
+      </div>
+    </div>
+    <div class="feedbox" *ngIf="openFeedbackForm">
+      <app-feedback (setValue)="closeFeedback($event)"></app-feedback>
+    </div>
+
+    <div class="peerVideo">
+      <!-- 
+ // text field -->
+      <div class="QuestionCard  hideMessage" id="textDisplay" style="margin-top: 21px;">
+        <div class="avatarspeak-s" id="descpText">
+        </div>
+      </div>
+      <!-- 
+ // end text field -->
+
+
+      <!-- <div class="hideMessage" id="pdfDataSet" style="margin-top: 15px;">
+        <app-pdf #childPdf [pdf]="pdfShow" (stopSubtitle)="stopSubtitleAnimation()"></app-pdf>
+      </div> -->
+
+      <div class="playerOne  hideMessage" id="ImageDisplay" style="margin-top: 21px;">
+        <div class="" style="height:330px;">
+          <img class="ImageAspectRatio Qimage" [src]="ImageData"
+            style=" box-shadow: rgba(239, 221, 221, 0.35) 0px 5px 15px; ">
+        </div>
+      </div>
+
+      <!-- end Image display area -->
+      <div class="playerOne hideMessage" id="QuestionDisplay" style="margin-top: 21px;">
+        <div class="accordionsection">
+          <button id="accodH1" (click)="accordQestionhit()" style="font-weight: 400;" class="accordion active">&nbsp;
+            <b>Question</b>
+            <i *ngIf="accod1 == false" style="display:flex ; justify-content:right ; margin-top:-23px "
+              class="fa-solid fa-plus mr-3 mb-2"></i>
+            <i *ngIf="accod1 == true" style="display:flex ; justify-content:right ; margin-top:-23px"
+              class="fa-solid fa-minus mr-3 mb-2"></i>
+          </button>
+          <div class="panel" id="accod1" style="display: block;">
+            <div class="panelss scrollbar">
+              <p id="QQ">
+              </p>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div class="f" *ngIf="CorrectAnswer != ''">
+            <button id="accodH2" (click)="accordAnswerHit()" style="font-weight: 400;" class="accordion mt-3">&nbsp;
+              <b>Response</b>
+              <i *ngIf="accod2 == false" style="display:flex ; justify-content:right ; margin-top:-23px"
+                class="fa-solid fa-plus mr-3 mb-2"></i>
+              <i *ngIf="accod2 == true" style="display:flex ; justify-content:right ; margin-top:-23px"
+                class="fa-solid fa-minus mr-3 mb-2"></i>
+            </button>
+            <div class="panel" id="accod2">
+              <div class="panelss scrollbar">
+                <p id="answerD">
+
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- cc_icon -->
+      <div class="playerTwo " *ngIf="DescAnswer == ''" id="optionMessage" style="margin-top: 20px;">
+        <button class="btn ava " [disabled]="isClick" (click)="selectOptionForTest(p)"
+          *ngFor="let p of optionList">{{p}}</button>
+      </div>
+
+      <ng-container *ngIf="DescAnswer != ''">
+        <div class="playerThree  hideMessage " id="message" style="margin-top: 38px;">
+          <div class="avatarspeak-s scrollbar" id="outputDesc">
+          </div>
+          <img *ngIf="runLoderGPT" src="../../../../assets/threedot.gif" style="width: 100px;">
+          
+          <div class="hideMessage" id="followDisplay" style="margin-top: 4px;">
+            <a [href]="followup" target="_blank">
+              <div class="text-button" style="margin-left: 8px">{{followName}}</div>
+            </a>
+          </div>
+
+        </div>
+      </ng-container>
+
+
+      <div class="hideMessage" id="userCC">
+        <div class="avatarspeak showI" id="userText">
+          <div class="avatarspeak-s" id="local-transcript"></div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

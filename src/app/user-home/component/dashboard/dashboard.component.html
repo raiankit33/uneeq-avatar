@@ -1,0 +1,163 @@
+<div class="col-md-12">
+
+  <div class="user-band">
+    <img src="../../../../assets/images/holder.png" class="user-face-big">
+    <span class="user-details">
+      <h2 class="mobileTitle">Hey, {{user.name}}!</h2>
+      <p>Profile 30% complete ></p>
+    </span>
+    <div class="points"><img src="./assets/images/points-icon.png">Points <span>102</span></div>
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-xl-3 col-lg-12">
+      <div class="card bot tt ecom-card-1  bg-white" (click)="openTestSeries()">
+        <div class="card-content ecom-card2 " style="height: 28px; text-align: center; cursor: pointer;">
+
+          <a>&nbsp;&nbsp; Resume the test</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-12">
+      <div class="card bot ecom-card-1 bg-white" (click)="openTestSeries()">
+        <div class="card-content ecom-card2 " style="height: 28px; text-align: center;cursor: pointer;">
+
+          <a>&nbsp;&nbsp; Start new test series</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-12">
+      <div class="card bot ecom-card-1 bg-white">
+        <div class="card-content ecom-card2 " style="height: 28px; text-align: center; cursor: pointer;">
+
+          <a>&nbsp;&nbsp; Challenge someone</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <!-- <div class="container">
+<div class="button-band"> 
+
+<a class="normal">Resume the Test</a>
+<a class="normal">Start new test series</a>
+<a class="normal">Challenge Someone</a>
+</div>
+
+</div> -->
+
+
+  <div class="heading-band">
+    <h3>Select Topic to Improve</h3>
+  </div>
+
+
+  <div class="clear"></div>
+
+
+
+
+  <div class="container">
+
+
+    <div class="topic-box item">
+      <img src="./assets/images/topic-icon1.png">
+      <span>Anatomy</span>
+      <span class="bar"><span class="progress-bar"></span></span>
+    </div>
+
+
+
+    <div class="topic-box item">
+      <img src="./assets/images/topic-icon2.png">
+      <span>Medicine</span>
+      <span class="bar"><span class="progress-bar"></span></span>
+    </div>
+
+
+    <div class="topic-box item">
+      <img src="./assets/images/topic-icon3.png">
+      <span>Cardiology</span>
+      <span class="bar"><span class="progress-bar"></span></span>
+    </div>
+
+
+
+    <div class="topic-box item">
+      <img src="./assets/images/topic-icon4.png">
+      <span>Physiology</span>
+      <span class="bar"><span class="progress-bar"></span></span>
+    </div>
+
+
+
+    <div class="topic-box item">
+      <img src="./assets/images/topic-icon5.png">
+      <span>Pathology</span>
+      <span class="bar"><span class="progress-bar"></span></span>
+    </div>
+
+
+    <div class="topic-box  item last-child">
+      <img src="./assets/images/topic-icon6.png">
+      <span>Pathology</span>
+      <span class="bar"><span class="progress-bar"></span></span>
+    </div>
+
+  </div>
+
+  <div class="clear"></div>
+  <br>
+  <div class="tab">
+    <button class="tablinks active" id="base-tab1" (click)="tab1()">In Progress</button>
+    <button class="tablinks" id="base-tab2" (click)="tab2()">Completed</button>
+  </div>
+
+
+
+  <div id="tab1" class="tabcontent" style="display:table">
+    <div class="container">
+      <div class="study-box items" style="height: 370px;">
+        <img src="./assets/images/book-icon.png">
+        <p>Interpret graphic and tabular material </p>
+        <span class="bar"><span class="progress-bar"></span><em>14%</em></span>
+        <span class="hline"></span>
+        <a  class="text-button">Continue</a>
+      </div>
+
+
+      <div class="study-box items" style="height: 370px;">
+        <img src="./assets/images/book-icon.png">
+        <p>Identify gross and microscopic pathologic and normal specimens </p>
+        <span class="bar"><span class="progress-bar"></span><em>14%</em></span>
+        <span class="hline"></span>
+        <a  class="text-button">Continue</a>
+      </div>
+
+
+      <div class="study-box items" style="height: 370px;">
+        <img src="./assets/images/book-icon.png">
+        <p>Apply basic science knowledge to clinical problems </p>
+        <span class="bar"><span class="progress-bar"></span><em>14%</em></span>
+        <span class="hline"></span>
+        <a  class="text-button">Continue</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="tab2" class="tabcontent">
+    tab2
+  </div>
+
+
+
+
+
+
+
+
+
+</div>

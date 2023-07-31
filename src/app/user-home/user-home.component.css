@@ -1,0 +1,40 @@
+
+
+.tree {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+
+.showI {
+  display: none;
+}
+
+
+.divBottom{
+  position: fixed;
+  /* margin: 5px; */
+  /* bottom: 50px; */
+  bottom: 100px;
+}
+
+.divBottomPhone{
+  position: fixed;
+  cursor: default !important;
+  /* margin: 5px; */
+  /* bottom: 20px; */
+  bottom: 67px;
+}
+
+/* 
+>>>>>>>>>>>>> mic animation css */
+
+
+.left-menu a:not([href]):not([class]) {
+  color: #000000;
+}
+
+.left-menu a:not([href]):not([class]):hover {
+  color: #0079a5
+}

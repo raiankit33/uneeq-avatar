@@ -1,0 +1,64 @@
+<!-- Header -->
+<header>
+  <div class="container headersss">
+    <div class="row headersss">
+
+      <div class="col-md-12">
+        <div class="toping">
+          <button class="e-an" id="mobileButt" (click)="sideMenu()"
+            style="margin-left:-10px; background-color:#ececec ; z-index: 100; "><img
+              src="./assets/images/three-lines.png"></button>
+        </div>
+        <div class="col-md-3 col-md-6">
+          <div id="gg" class="top-search d-none d-md-block ">
+
+            <input name="" type="text" class="search-textbox" placeholder="Search">
+            <span class="search-mic" id="microPhone" (click)="changeFunction()"></span>
+
+          </div>
+        </div>
+
+
+
+        <div class="top-bell d-none d-md-block">
+          <span>0</span>
+          <img src="./assets/images/bell.png">
+        </div>
+
+        <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link"
+            data-toggle="dropdown"> <span class="avatar avatar-online"><img src="./assets/images/holder.png"
+                style="width: 35px; cursor: pointer;" alt="avatar"></span></a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <div class="arrow_box_right">
+
+              <a class="dropdown-item " (click)="homeButton()" style="cursor: pointer;"><i class="ft-user"></i>Home</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item " style="cursor: pointer;" (click)="profile()"><i class="ft-user"></i> Edit
+                Profile</a>
+
+              <div class="dropdown-divider"></div><a class="dropdown-item" style="cursor: pointer;"
+                (click)="logOutFun()"><i class="ft-power"></i>
+                Logout</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- <div class="dropdown">
+  <button (click)="myFunction()" class="dropbtn"><img src="./assets/images/holder.png" class="user-face"></button>
+  <div id="myDropdown" class="dropdown-content" style="cursor: pointer;">
+  <a >Home</a>
+  <a (click)="profile()">Profile</a>
+  <a (click)="logOut()">Logout</a>
+  </div>
+  </div> -->
+
+
+
+
+      </div>
+
+
+    </div>
+  </div>
+</header>
+<!-- Header -->

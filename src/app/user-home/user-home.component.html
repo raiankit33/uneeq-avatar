@@ -1,0 +1,39 @@
+<div class="grid-container">
+
+  <!-- <----- Spinner ------- -->
+  <div class="" id="avatarLoaders">
+  <div class="mainLoader" >
+      </div>
+      <div class="mainLoad">
+       
+          <img src="../../assets/images/Rolling-1s-200px (2).gif" style="height: 70px; width: 70px;">
+          <ng-container *ngIf="errorStatusCode">
+          <div class="g" style="display: flex; justify-content: center; color: white; font-size: 18px;">
+         <p> Hannah is on her way to meet with you.<br>  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; Please wait a moment.</p>
+          </div> 
+          </ng-container>
+            <ng-container *ngIf="!errorStatusCode">
+          <div  class="py-1" style="display: flex; justify-content: center; color: white; font-size: 17px;">
+            <p> Something went wrong, please relogin. <br>  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;
+               &nbsp; &nbsp; <button class="btn btn-success mt-3" routerLink="/">Return to login</button></p>
+             </div>
+             </ng-container>
+      </div>
+      </div>
+
+  <!-- // sidebar html -->
+  <div class="sidebar " id="sidebar">
+  </div>
+
+  <div class="main-content" id="mainData">
+    <app-header></app-header>
+    <div class="clear header-gap"></div>
+    <!-- <div class="fixed-mic " id="movableCard-main"  [ngClass]="{ 'full_screen' : fullScreen == true}" >  -->
+    <ng-container *ngIf="hideTheAvatarCardOnly">
+      <app-uneeqavatar (storedErrorCode)="checkAvatarErrorStatus($event)"> </app-uneeqavatar>
+    </ng-container>
+
+    <router-outlet></router-outlet>
+
+  </div>
+</div>

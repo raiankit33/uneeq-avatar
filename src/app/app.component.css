@@ -1,0 +1,14 @@
+.fc-highlight {
+    background: green !important;
+  }
+
+
+  
+.bottomright {
+  position: fixed;
+  right: 25px; bottom: 4px;
+  width: 400px;
+  height:350px;
+  
+  padding: 5px;
+}
