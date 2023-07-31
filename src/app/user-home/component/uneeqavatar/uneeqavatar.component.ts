@@ -435,10 +435,10 @@ export class UneeqavatarComponent implements OnInit {
     this.uneeq = new Uneeq(options);
 
     let data = JSON.stringify({
-      "token": "VAnXf3zGIbtJjS8xwFTnKMZxP2M",
-      "name": "Hannah Edyou",
-      "email": "hannah@yopmail.com",
-      "lastlogin": "2023-07-31,08:17:33"
+      "token":"xOBCdlXyG1SYiYUc6KtzzucsHOA",
+      "name":"Yash  Test",
+      "email":"yash@test.in",
+      "lastlogin":"2023-07-31,10:48:45"
     });
     this.service.uneeqAvatar(data).subscribe((res: any) => {
       if (res.statusCode == 200) {
@@ -702,8 +702,10 @@ export class UneeqavatarComponent implements OnInit {
     localStorage.setItem('sessionId', this.uneeq.sessionId)
     let zoomPayload = {
       "sessionID": this.uneeq.sessionId,
-      "email": this.user.email,
-      token: this.token,
+      "token": "xOBCdlXyG1SYiYUc6KtzzucsHOA",
+      "email": "yash@test.in",
+      
+    
     }
     //  console.log("zoom payload =>", zoomPayload)
     this.ser.zoomSetting(zoomPayload).subscribe((res: any) => {
@@ -1306,8 +1308,9 @@ export class UneeqavatarComponent implements OnInit {
       "gptPrompt": 'Everything',
       "sessionID": session,
       "instance_pvt_ip": '172.31.58.92',
-      "email": "hannah@yopmail.com",
-      "time": "2023-07-31,08:17:33"
+      "email": "yash@test.in",
+      "time": "2023-07-31,10:48:45"
+    
     }
 
     if (localStorage.hasOwnProperty("learningId")) {

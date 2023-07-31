@@ -96,11 +96,12 @@ export class FeedbackComponent implements OnInit {
     // this.isformActive = false
     if (this.feedbackForm.valid) {
       let payload = {
-        "name": "Hannah Edyou",
-        "email": "hannah@yopmail.com",
-        "time": "2023-07-31,08:17:33",
         "emoji": this.feedbackForm.value.face,
         "feedback": this.feedbackForm.value.formData,
+        "name": "Yash  Test",
+        "email": "yash@test.in",
+        "time": "2023-07-31,10:48:45"
+      
       }
       this.isLoading = true
       this.service.feedbackForm(payload).subscribe((res: any) => {

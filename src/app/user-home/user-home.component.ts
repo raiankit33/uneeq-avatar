@@ -196,13 +196,13 @@ export class UserHomeComponent implements OnInit, OnDestroy {
 
   CounterCheck() {
     let p = {
-    //  "email": this.user.email,
-      //"time": this.user.lastlogin,
-     // "token": this.user.token,
+
       "action": "Auto" ,
-      "token": "VAnXf3zGIbtJjS8xwFTnKMZxP2M",
-      "email": "hannah@yopmail.com",
-      "time": "2023-07-31,08:17:33"
+      "token": "xOBCdlXyG1SYiYUc6KtzzucsHOA",
+      "name": "Yash  Test",
+      "email": "yash@test.in",
+      "time": "2023-07-31,10:48:45"
+    
     }
     //console.log('repating....',p)
     this.service.logOut(p).subscribe(res => {
@@ -238,9 +238,11 @@ export class UserHomeComponent implements OnInit, OnDestroy {
   logOutFun() {
     let p = {
       "action": "logout",
-      "token": "pl11kg55vwKtCVU1GYmWafsm77U",
-      "email": "hannah@yopmail.com",
-      "time": "2023-07-31,08:17:33"
+      "token": "xOBCdlXyG1SYiYUc6KtzzucsHOA",
+      "name": "Yash  Test",
+      "email": "yash@test.in",
+      "time": "2023-07-31,10:48:45"
+    
     }
     this.service.logOut(p).subscribe(res => {
       this.expiredDataAndAvatar()
